@@ -1,52 +1,38 @@
-package lab8.ex1;
+package lab8.ex5;
 
-public class Circle {
+public class Circle extends  Shape{
     private double radius;
-    private String color;
 
-    public Circle(){
+    public Circle (){
+        super();
         this.radius = 1.0;
-        this.color = "red";
     }
-    public Circle(double radius){
+    public Circle (double radius){
+        super();
         this.radius = radius;
-        this.color = "red";
     }
-    public Circle(double radius, String color){
+    public Circle (String color, boolean filled , double radius){
+        super(color, filled);
         this.radius = radius;
-        this.color = color;
     }
 
     public double getRadius() {
         return radius;
     }
-
     public void setRadius(double radius) {
         this.radius = radius;
     }
 
-    public String getColor() {
-        return color;
+    public double getArea(){
+        return radius * radius *Math.PI;
     }
 
-    public void setColor(String color) {
-        this.color = color;
+    public double getPeimeter(){
+        return 2*radius * Math.PI;
     }
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                ", color='" + color + '\'' +
-                '}';
-    }
-
-    public double getArea(){
-        return radius*radius*Math.PI;
-    }
-
-    public static void main(String[] args) {
-    Circle c1 = new Circle();
-        System.out.println(c1);
+        return "Circle{"+ super.toString() + "radius=" + radius + "} " ;
     }
 }
