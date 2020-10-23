@@ -3,15 +3,15 @@ package lab8.ex5;
 public class Square extends  Rectangle {
     double side;
 
-    private Square(){
+    public Square(){
         super();
         this.side = 1.0;
     }
-    private Square(double side){
+    public Square(double side){
         super(side, side);
         this.side =side;
     }
-    private Square(String color , boolean filled, double side){
+    public Square(String color , boolean filled, double side){
         super(color,filled,side,side);
         this.side = side;
     }
